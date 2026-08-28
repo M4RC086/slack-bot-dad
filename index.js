@@ -37,17 +37,6 @@ app.command("/dad-catfact", async ({ ack, respond }) => {
   }
 });
 
-app.command("/dad-programming-joke", async ({ ack, respond }) => {
-  await ack();
-
-  try {
-    const response = await axios.get("https://v2.jokeapi.dev/joke/Programming?type=twopart");
-    await respond({ text: `Programming joke:\n${response.setup}\n{response.delivery}` });
-  } catch (err) {
-    await respond({ text: "Failed to fetch a cat fact." });
-  }
-});
-
 
 
 
