@@ -16,7 +16,9 @@ This bot is like a dad. He tells jokes, advices, etc.
 ## Commands
 <strong>Available Commands:</strong>
 <ul>
+    <li><code>/dad-help</code> - Show help about commands</li>
     <li><code>/dad-ping</code> - Check bot latency</li>
+    <li><code>/dad-fact</code> - He tells a good fact to help you</li>
     <li><code>/dad-catfact</code> - He tells a cat fact</li>
     <li><code>/dad-joke</code> - He tells a bad joke</li>
     <li><code>/dad-chuck-norris</code> - He tells a fact about Chuck Norris</li>
