@@ -38,6 +38,19 @@ app.command("/dad-catfact", async ({ ack, respond }) => {
 });
 
 
+app.command("/dad-i-am-bored", async ({ ack, respond }) => {
+  await ack();
+
+  try {
+    const response = await axios.get("https://bored-api.appbrewery.com/random");
+    await respond({ text: `If you're bored ${response.data.activity.toLowerCase()}` });
+  } catch (err) {
+    await respond({ text: "Failed to fetch an activity." });
+  }
+});
+
+
+
 
 
 (async () => {
