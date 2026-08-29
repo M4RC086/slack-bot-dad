@@ -24,7 +24,10 @@ app.command("/dad-help", async ({ ack, respond }) => {
     text:
     `Available Commands:
     /dad-ping - Check bot latency
-    /dad-catfact - Get a cat fact`
+    /dad-catfact - Tells a cat fact
+    /dad-joke - Tells a bad joke
+    /dad-chuck-norris - Tells a fact about Chuck Norris
+    /dad-i-am-bored - Tells you things to do`
   });
 });
 
