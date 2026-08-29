@@ -49,7 +49,16 @@ app.command("/dad-i-am-bored", async ({ ack, respond }) => {
   }
 });
 
+app.command("/dad-fact", async ({ ack, respond }) => {
+  await ack();
 
+  try {
+    const response = await axios.get("https://api.chucknorris.io/jokes/random");
+    await respond({ text: `Once I met Chuck Norris. ${response.data.value}` });
+  } catch (err) {
+    await respond({ text: "Failed to fetch a fact." });
+  }
+});
 
 
 
