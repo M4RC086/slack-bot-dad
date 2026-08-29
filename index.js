@@ -9,6 +9,8 @@ const app = new App({
   socketMode: true
 });
 
+
+// Commands
 app.command("/dad-ping", async ({ command, ack, respond }) => {
   const start = Date.now();
   await ack();
@@ -68,6 +70,17 @@ app.command("/dad-fact", async ({ ack, respond }) => {
     await respond({ text: `Listen to me: \n${response.data.slip.advice}` });
   } catch (err) {
     await respond({ text: "Failed to fetch an advice." });
+  }
+});
+
+app.command("/dad-joke", async ({ ack, respond }) => {
+  await ack();
+
+  try {
+    const response = await axios.get("https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=twopart");
+    await respond({ text: `${response.data.setup}\n${response.data.delivery}` });
+  } catch (err) {
+    await respond({ text: "Failed to fetch a joke." });
   }
 });
 
