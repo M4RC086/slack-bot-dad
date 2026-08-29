@@ -88,5 +88,5 @@ app.command("/dad-joke", async ({ ack, respond }) => {
 
 (async () => {
   await app.start();
-  console.log("bot is running!");
+  console.log("dad is awake!");
 })();
