@@ -49,14 +49,25 @@ app.command("/dad-i-am-bored", async ({ ack, respond }) => {
   }
 });
 
-app.command("/dad-fact", async ({ ack, respond }) => {
+app.command("/dad-chuck-norris", async ({ ack, respond }) => {
   await ack();
 
   try {
     const response = await axios.get("https://api.chucknorris.io/jokes/random");
-    await respond({ text: `Once I met Chuck Norris. ${response.data.value}` });
+    await respond({ text: `Once I met Chuck Norris.\n${response.data.value}` });
   } catch (err) {
     await respond({ text: "Failed to fetch a fact." });
+  }
+});
+
+app.command("/dad-fact", async ({ ack, respond }) => {
+  await ack();
+
+  try {
+    const response = await axios.get("https://api.adviceslip.com/advice");
+    await respond({ text: `Listen to me: \n${response.data.slip.advice}` });
+  } catch (err) {
+    await respond({ text: "Failed to fetch an advice." });
   }
 });
 
